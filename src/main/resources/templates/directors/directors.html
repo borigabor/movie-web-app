@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Directors list</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+
+<header class="header layout__item--full-width">
+    <div class="header-wrapper layout__item--70-percent layout__item--centered-horizontally">
+        <h3 class="header-title">Movie<span>Flix</span> </h3>
+    </div>
+</header>
+
+<div class="movie-container layout__item--70-percent layout__item--centered-horizontally">
+
+    <div class="container">
+        <h2>Directors</h2>
+        <div class="btn-container">
+            <div class="btn-box">
+                <a href="#" class="primary-btn btn">+</a>
+                <p>Add director</p>
+            </div>
+            <div class="btn-box">
+                <a href="#" class="primary-btn btn">◄</a>
+                <p>Back to home</p>
+            </div>
+        </div><!--btn-container end-->
+    </div><!--heading container end-->
+
+    <div class="director-container">
+
+        <div th:each="director : ${directors}" class="director-box">
+            <img class="avatar" th:src="${director.avatar}" alt="director avatar">
+            <h6 class="director-name" th:text="${director.name}">Director Name</h6>
+            <p class="director-nationality" th:text="${director.nationality}">Director Nationality</p>
+            <p class="director-date-of-birth" th:text="${director.dateOfBirth}">Director Birth</p>
+            <div class="btn-container buttons-directors">
+                <div class="btn-box">
+                    <a href="#" class="btn secondary-btn edit-btn">✔</a>
+                    <p>Edit</p>
+                </div>
+                <form th:action="@{/directors/delete/{id}(id=${director.id})}" method="post" class="btn-box">
+                    <button type="submit" class="btn secondary-btn delete-btn">X</button>
+                    <p>Delete</p>
+                </form>
+            </div>
+        </div>
+
+
+    </div> <!--main display 70 percent end-->
+
+</div>
+
+</body>
+</html>

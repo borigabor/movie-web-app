@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movie List</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+
+<header class="header layout__item--full-width">
+    <div class="header-wrapper layout__item--70-percent layout__item--centered-horizontally">
+        <h3 class="header-title">Movie<span>Flix</span> </h3>
+    </div>
+</header>
+
+    <div class="movie-container layout__item--70-percent layout__item--centered-horizontally "> <!--70 percent width movie container-->
+
+        <div class="container gutter--horizontal-small">
+            <h2>Movies</h2>
+            <div class="btn-container">
+                <div class="btn-box">
+                    <a href="#" class="primary-btn btn">+</a>
+                    <p>Add movie</p>
+                </div>
+                <div class="btn-box">
+                    <a href="#" class="primary-btn btn">◄</a>
+                    <p>Back to home</p>
+                </div>
+            </div><!--btn-container end-->
+        </div><!--heading container end-->
+
+        <div th:each="movie : ${movies}" class="movie gutter--horizontal-small"> <!--movie box start-->
+            <div class="movie-details">
+
+                <img class="movie-cover" th:src="${movie.coverUrl}" alt="movie cover">
+
+                <div class="movie-description">
+                    <h3 class="movie-title" th:text="${movie.title}">movie title</h3>
+                     <div class="flex">
+                         <span th:text="${movie.releaseDate}"> release date</span>
+                         <span th:text="${movie.lang}">movie language</span>
+                         <span th:text="${movie.duration + 'm'}">movie duration</span>
+                     </div>
+                     <p th:text="${movie.genre}">movie genre</p>
+                     <p th:text="${movie.title}">movie director</p>
+                     <p th:text="${movie.plot}" class="plot">movie plot</p>
+                 </div>
+
+                <div class="btn-container buttons-movies"> <!--buttons start-->
+                    <div class="btn-box">
+                        <a href="#" class="btn secondary-btn edit-btn">✔</a>
+                        <p>Edit</p>
+                    </div>
+                    <form th:action="@{/movies/delete/{id}(id=${movie.id})}" method="post" class="btn-box">
+                        <button type="submit" class="btn secondary-btn delete-btn">X</button>
+                        <p>Delete</p>
+                    </form>
+                </div> <!--buttons end-->
+
+            </div>
+
+
+
+        </div> <!--movie box end-->
+
+    </div> <!--70 percet layout end-->
+
+
+</body>
+</html>

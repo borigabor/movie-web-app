@@ -1,0 +1,232 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #5A5A5A;
+    margin-bottom: 0.625rem;
+    transition:     .2s linear;
+}
+
+.primary-btn {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+}
+
+.secondary-btn {
+    height: 3rem;
+    width: 3rem;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+.delete-btn {
+    background-color: red;
+    color: #FFFFFF;
+}
+
+.edit-btn {
+    background-color: green;
+    color: #FFFFFF;
+}
+
+.btn:hover  {
+    transform: scale(1.2);
+}
+
+.header {
+    height: 6.25rem;
+    background-color: #000000;
+}
+
+.header-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header-title {
+    color: yellow;
+    font-size: 2.5rem;
+}
+
+.header-title span {
+    color: red;
+    font-size: 2.5rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #B2ACBA;
+}
+
+.btn-container {
+    display: flex;
+}
+
+
+.btn-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 1.875rem;
+}
+
+.buttons-directors,
+.buttons-movies {
+    position: absolute;
+    right: 0.938rem;
+}
+
+.buttons-directors {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.buttons-movies { top: 1.25rem; }
+
+.movie {
+    position: relative;
+    background-color:    #FAFAFC;
+    padding:             1.25rem;
+    border-radius:       1.5rem;
+    border:              3px solid rgba(249, 249, 249, .1);
+    box-shadow:         rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(249 249 249 / 73%) 0px 16px 10px -10px;
+    transition:         all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
+
+.movie:hover {
+    box-shadow:    rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(249 249 249 / 72%) 0px 30px 22px -10px;
+    transform:     scale(1.05);
+    border-color:  rgba(249, 249, 249, .8);
+}
+
+.movie-cover {
+    max-height:     17rem;
+    max-width:      17rem;
+    border-radius:  .5rem;
+}
+
+
+.movie-details {
+    display:      flex;
+    align-items:  center;
+    gap:          2rem;
+}
+
+.movie-title { margin-bottom: 0.625rem; }
+
+
+
+.plot {
+    margin-top:   2rem;
+    padding-top:  1rem;
+    border-top:   1px solid #AAAAAA;
+    width: 90%;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: .5rem;
+}
+
+
+/*Director CSS*/
+
+.avatar {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    margin-right: 0.938rem;
+}
+
+.director-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.938rem;
+    border-bottom: 1px solid #B2ACBA;
+    border-left:  0.313rem solid;
+    border-left-color: transparent;
+    transition:     .3s linear;
+}
+
+.director-box:hover {
+    border-left-color: #39465D;
+}
+
+
+
+.director-name,
+.director-nationality,
+.director-date-of-birth {
+    margin-right: 0.938rem;
+    color: #39465D;
+}
+
+
+
+
+@media (max-width: 991px){
+    html{ font-size: 55%; }
+
+    .movie-container {
+        width: 100% !important;
+        padding: 0 2rem;
+     }
+
+
+    }
+
+    @media (max-width: 768px){
+
+        h2 { font-size: 2rem;}
+
+            img {
+                height:  15rem;
+                width:   15rem;
+            }
+
+            .avatar {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            h3 { font-size: 1.5rem; }
+
+            h6 { font-size: 0.75rem; }
+
+            span, p { font-size: .768rem; }
+
+
+            .buttons {
+                margin-left: 0;
+            }
+
+            .primary-btn {
+                height: 3rem;
+                width: 3rem;
+                font-size: 1.5rem;
+            }
+
+            .secondary-btn {
+                height: 2rem;
+                width: 2rem;
+            }
+
+
+       }
+
+    @media (max-width: 450px) {
+        html { font-size: 50%; }
+      }

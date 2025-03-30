@@ -1,0 +1,16 @@
+
+.layout__item--full-width     { width: 100%; }
+
+.layout__item--70-percent     { width: 70%; }
+
+
+
+.layout__item--centered-horizontally {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.gutter--horizontal-small   { margin-bottom: 1.875rem; }
+
+.gutter--horizontal-big     { margin-bottom: 2.5rem; }
