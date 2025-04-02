@@ -2,27 +2,49 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Welcome to Movie Application</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1>Movie Application</h1>
-    </header>
 
-    <main>
-        <p>Welcome to the Movie Application! Use the buttons below to navigate:</p>
+<header class="header layout__item--full-width gutter--horizontal-big">
+    <div class="header-wrapper layout__item--70-percent layout__item--centered-horizontally">
+        <h3 class="header-title">MovieFlix</h3>
+    </div>
+</header>
 
-        <!-- Button linking to Authors List -->
-        <a href="/authors/list" class="btn">View Directors</a> <!-- Updated path to /authors/list -->
+<div class="movie-container layout__item--70-percent layout__item--centered-horizontally">
 
-        <!-- Button linking to Books List -->
-        <a href="/books/list" class="btn">View Movies</a> <!-- Already updated to /books/list -->
-    </main>
+
+    <div class="home">
+        <div class="home-content">
+            <h1 class="headers gutter--horizontal-big ">Welcome to the MovieFlix Application!</h1>
+            <div class="home-container gutter--horizontal-big">
+                <h2>Use the buttons below to navigate</h2>
+                <div class="btn-container">
+                    <div class="btn-box">
+                        <a href="/movies/list" class="primary-btn btn"><i class="fa-solid fa-film"></i></a>
+                        <p>View Movie List</p>
+                    </div>
+                    <div class="btn-box">
+                        <a href="/directors/list" class="primary-btn btn"><i class="fa-solid fa-user"></i></a>
+                        <p>View Direcor List</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
 
     <footer>
         <p>&copy; 2025 Movie Application</p>
     </footer>
-</div>
+
 </body>
 </html>

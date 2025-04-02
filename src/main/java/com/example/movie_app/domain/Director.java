@@ -25,8 +25,6 @@ public class Director {
     private String nationality;
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
-    /*
     @OneToMany(mappedBy = "director", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Movie> movies;
-*/
 }

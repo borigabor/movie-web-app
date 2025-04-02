@@ -2,6 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Directors list</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/components.css">
@@ -10,21 +13,21 @@
 
 <header class="header layout__item--full-width">
     <div class="header-wrapper layout__item--70-percent layout__item--centered-horizontally">
-        <h3 class="header-title">Movie<span>Flix</span> </h3>
+        <h3 class="header-title">MovieFlix</h3>
     </div>
 </header>
 
 <div class="movie-container layout__item--70-percent layout__item--centered-horizontally">
 
-    <div class="container">
+    <div class="container gutter--horizontal-big">
         <h2>Directors</h2>
         <div class="btn-container">
             <div class="btn-box">
-                <a href="#" class="primary-btn btn">+</a>
+                <a href="/directors/new" class="primary-btn btn"><i class="fa-solid fa-plus"></i></a>
                 <p>Add director</p>
             </div>
             <div class="btn-box">
-                <a href="#" class="primary-btn btn">◄</a>
+                <a href="/" class="primary-btn btn"><i class="fa-solid fa-house"></i></a>
                 <p>Back to home</p>
             </div>
         </div><!--btn-container end-->
@@ -39,11 +42,11 @@
             <p class="director-date-of-birth" th:text="${director.dateOfBirth}">Director Birth</p>
             <div class="btn-container buttons-directors">
                 <div class="btn-box">
-                    <a href="#" class="btn secondary-btn edit-btn">✔</a>
+                    <a th:href="@{/directors/edit/{id}(id=${director.id})}" class="btn secondary-btn"><i class="fa-solid fa-pen icon"></i></a>
                     <p>Edit</p>
                 </div>
                 <form th:action="@{/directors/delete/{id}(id=${director.id})}" method="post" class="btn-box">
-                    <button type="submit" class="btn secondary-btn delete-btn">X</button>
+                    <button type="submit" class="btn secondary-btn"><i class="fa-solid fa-user-xmark icon"></i></button>
                     <p>Delete</p>
                 </form>
             </div>

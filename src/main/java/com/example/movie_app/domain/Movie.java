@@ -28,9 +28,7 @@ public class Movie {
     private String duration;
     private String genre;
     private String plot;
-/*
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "director_id", nullable = false)
     private Director director;
-*/
 }
