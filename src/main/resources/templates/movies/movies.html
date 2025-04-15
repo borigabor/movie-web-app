@@ -21,6 +21,16 @@
 
         <div class="container gutter--horizontal-big">
             <h2>Movies</h2>
+
+            <form class="wrap" action="/movies/search" method="get">
+                <div class="search">
+                    <input class="searchTerm" type="text" name="title" placeholder="Search movie title">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </form>
+
             <div class="btn-container">
                 <div class="btn-box">
                     <a href="/movies/new" class="primary-btn btn"><i class="fa-solid fa-plus"></i></a>
@@ -33,10 +43,16 @@
             </div><!--btn-container end-->
         </div><!--heading container end-->
 
+        <div th:if="${movies.isEmpty()}">
+            <p class="search-text">Nincs talála a keresésre.</p>
+        </div>
+
         <div th:each="movie : ${movies}" class="movie gutter--horizontal-small"> <!--movie box start-->
             <div class="movie-details">
 
-                <img class="movie-cover" th:src="${movie.coverUrl}" alt="movie cover">
+
+                    <img class="movie-cover" th:src="${movie.coverUrl}" alt="movie cover">
+
 
                 <div class="movie-description">
                     <h3 class="movie-title" th:text="${movie.title}">movie title</h3>

@@ -42,11 +42,11 @@
         <div class="input-box">
             <label for="lang">Language</label>
             <select th:field="*{lang}" name="lang" id="lang" class="input-field" >
-                <option value="eng">English</option>
-                <option value="hun">Magyar</option>
-                <option value="spa">Spanish</option>
-                <option value="fre">French</option>
-                <option value="deu">Deutsch</option>
+                <option value="English">English</option>
+                <option value="Magyar">Magyar</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="Deutsch">Deutsch</option>
             </select>
         </div>
 
@@ -62,20 +62,24 @@
         </div>
 
         <div class="input-box">
+            <label for="genre">Genre</label>
+            <input type="text" th:field="*{genre}" id="genre" name="genre" class="input-field" >
+        </div>
+
+        <div class="input-box">
             <label for="plot">Plot</label>
             <textarea th:field="*{plot}" required id="plot" name="plot" placeholder="Enter movie Plot..." class="input-field input-field--textarea"></textarea>
         </div>
 
         <div class="btn-container">
             <div class="btn-box">
-                <a href="/movies/list" class="primary-btn btn"><i class="fa-solid fa-x"></i></a>
-                <p>Cancel</p>
-            </div>
-            <div class="btn-box">
                 <button type="submit" class="primary-btn btn"><i class="fa-solid fa-check"></i></button>
                 <p>Add Movie </p>
             </div>
-
+            <div class="btn-box">
+                <a href="/movies/list" class="primary-btn btn"><i class="fa-solid fa-x"></i></a>
+                <p>Cancel</p>
+            </div>
         </div>
 
     </form><!--end form-->

@@ -2,6 +2,7 @@ package com.example.movie_app.controller;
 
 
 import com.example.movie_app.domain.Director;
+import com.example.movie_app.domain.Movie;
 import com.example.movie_app.service.DirectorService;
 import com.example.movie_app.service.MovieService;
 import org.springframework.stereotype.Controller;
@@ -63,6 +64,12 @@ public class DirectorController {
         return "redirect:/directors/list"; // Redirect to /authors/list after deleting
     }
 
+    @GetMapping("/search")
+    public String searchDirector(@RequestParam String name, Model model) {
+        List<Director> directors = directorService.searchByName(name);
+        model.addAttribute("directors", directors);
+        return "directors/directors";
 
+    }
 
 }

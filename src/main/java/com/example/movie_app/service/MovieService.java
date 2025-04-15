@@ -23,12 +23,17 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    public void save(Movie movie) {
-        movieRepository.save(movie);
+
+    public List<Movie> searchByTitle(String title) {
+        return movieRepository.findByTitleContainingIgnoreCase(title);
     }
 
-    public void edit(Movie movie) {
-        movieRepository.save(movie);
+    public Movie save(Movie movie) {
+       return movieRepository.save(movie);
+    }
+
+    public Movie edit(Movie movie) {
+       return movieRepository.save(movie);
     }
 
     public Movie findById(UUID id) {
@@ -36,13 +41,12 @@ public class MovieService {
         if(optionalMovie.isPresent()) {
             return optionalMovie.get();
         } else {
-            throw new NoSuchEntityException("There was no movie found for this id: " + id);
+            throw new NoSuchEntityException("There was no Movie with id: " + id);
         }
     }
 
     public void deleteById(UUID id) {
         movieRepository.deleteById(id);
     }
-
 
 }

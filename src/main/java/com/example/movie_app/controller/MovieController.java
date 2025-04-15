@@ -64,6 +64,11 @@ public class MovieController {
     }
 
 
-
+    @GetMapping("/search")
+    public String searchMovie(@RequestParam String title, Model model) {
+        List<Movie> movies = movieService.searchByTitle(title);
+        model.addAttribute("movies", movies);
+        return "movies/movies";
+    }
 
 }

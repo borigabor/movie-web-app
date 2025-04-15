@@ -1,6 +1,7 @@
 package com.example.movie_app.service;
 
 import com.example.movie_app.domain.Director;
+import com.example.movie_app.domain.Movie;
 import com.example.movie_app.exception.NoSuchEntityException;
 import com.example.movie_app.repository.DirectorRepository;
 import org.springframework.stereotype.Service;
@@ -23,12 +24,16 @@ public class DirectorService {
         return directorRepository.findAll();
     }
 
-    public void save(Director director) {
-        directorRepository.save(director);
+    public List<Director> searchByName(String name) {
+        return directorRepository.findByNameContainingIgnoreCase(name);
     }
 
-    public void edit(Director director) {
-        directorRepository.save(director);
+    public Director save(Director director) {
+       return directorRepository.save(director);
+    }
+
+    public Director edit(Director director) {
+      return directorRepository.save(director);
     }
 
     public Director findById(UUID id) {
