@@ -3,9 +3,15 @@ package com.example.movie_app.controller;
 import com.example.movie_app.domain.Movie;
 import com.example.movie_app.service.DirectorService;
 import com.example.movie_app.service.MovieService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 import java.util.UUID;
@@ -14,14 +20,10 @@ import java.util.UUID;
 @RequestMapping("/movies")
 public class MovieController {
 
-    private final MovieService movieService;
-
-    private final DirectorService directorService;
-
-    public MovieController(MovieService movieService, DirectorService directorService) {
-        this.movieService = movieService;
-        this.directorService = directorService;
-    }
+    @Autowired
+    private MovieService movieService;
+    @Autowired
+    private DirectorService directorService;
 
     @GetMapping("/list")
     public String getAllMovies(Model model) {
@@ -63,12 +65,11 @@ public class MovieController {
         return "redirect:/movies/list";
     }
 
-
     @GetMapping("/search")
     public String searchMovie(@RequestParam String title, Model model) {
         List<Movie> movies = movieService.searchByTitle(title);
         model.addAttribute("movies", movies);
         return "movies/movies";
     }
-
 }
+

@@ -44,7 +44,7 @@
         </div><!--heading container end-->
 
         <div th:if="${movies.isEmpty()}">
-            <p class="search-text">Nincs talála a keresésre.</p>
+            <p class="search-text">Nincs találat a keresésre.</p>
         </div>
 
         <div th:each="movie : ${movies}" class="movie gutter--horizontal-small"> <!--movie box start-->
