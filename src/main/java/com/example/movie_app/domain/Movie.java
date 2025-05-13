@@ -25,12 +25,10 @@ public class Movie {
     @Column(name = "release_date")
     private LocalDate releaseDate;
     private String lang;
-    private String duration;
+    private int duration;
     private String genre;
     private String plot;
-/*
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "director_id", nullable = false)
     private Director director;
-*/
 }

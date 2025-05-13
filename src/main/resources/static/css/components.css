@@ -2,36 +2,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #5A5A5A;
+    border: 2px solid #5A5A5A;
+    border-radius: .5rem;
     margin-bottom: 0.625rem;
     transition:     .2s linear;
+    color: #5A5A5A;
+    background-color: transparent;
 }
 
 .primary-btn {
     height: 5rem;
     width: 5rem;
-    border-radius: 50%;
     font-size: 2.5rem;
 }
 
 .secondary-btn {
-    height: 3rem;
-    width: 3rem;
-    border-radius: .5rem;
+    height: 4rem;
+    width: 4rem;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-
-.delete-btn {
-    background-color: red;
-    color: #FFFFFF;
+.icon {
+    font-size: 1.7rem;
 }
 
-.edit-btn {
-    background-color: green;
-    color: #FFFFFF;
-}
 
 .btn:hover  {
     transform: scale(1.2);
@@ -51,25 +46,60 @@
 
 
 .header-title {
-    color: yellow;
+    color: #FFFFFF;
     font-size: 2.5rem;
 }
 
-.header-title span {
-    color: red;
-    font-size: 2.5rem;
+/*-----------------------------------Home page------------------------------------*/
+
+.headers {
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 1px 1px #FFFFFF;
 }
+
+.home {
+    background: url(../assets/app_cover.jpg)no-repeat center center/cover;
+    min-height: 80vh;
+    padding: 2rem;
+    border-radius:       1.5rem;
+    border:              3px solid rgba(249, 249, 249, .1);
+    box-shadow:         rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(249 249 249 / 73%) 0px 16px 10px -10px;
+    display: flex;
+    align-items: center;
+}
+
+.home-content {
+    max-width: 60rem;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-container h2 {
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px #FFFFFF;
+}
+
+/*--------------------------------------------------------------------------------*/
+
 
 .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     border-bottom: 1px solid #B2ACBA;
 }
 
 .btn-container {
     display: flex;
+    gap: 1.5rem;
 }
 
 
@@ -77,7 +107,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 1.875rem;
 }
 
 .buttons-directors,
@@ -144,8 +173,8 @@
 /*Director CSS*/
 
 .avatar {
-    height: 5rem;
-    width: 5rem;
+    height: 5.5rem;
+    width: 5.5rem;
     border-radius: 50%;
     margin-right: 0.938rem;
 }
@@ -154,7 +183,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: 0.938rem;
+    padding: 1.2rem 2rem;
     border-bottom: 1px solid #B2ACBA;
     border-left:  0.313rem solid;
     border-left-color: transparent;
@@ -174,7 +203,113 @@
     color: #39465D;
 }
 
+/*------------------------------Form page-------------------------------*/
 
+.input-fields{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #AAAAAA;
+    border-radius: .5rem;
+    padding: 3.75rem;
+    border:              3px solid rgba(249, 249, 249, .1);
+    box-shadow:    rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(249 249 249 / 72%) 0px 30px 22px -10px;
+
+}
+
+
+.input-field {
+    display: block;
+    width: 40rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+    background-color: #F4F3F5;
+    outline: none;
+    border: none;
+    margin-bottom: 1.4286rem;
+    border-bottom: 3px solid;
+    border-bottom-color: transparent;
+}
+
+.input-field:focus { border-bottom-color: #6200EA; }
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: #211138;
+    opacity: .75;
+    font-weight: 600;
+    min-width: 10rem;
+}
+
+.input-field::placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #211138;
+    opacity: .25;
+}
+
+.input-field--textarea {
+    height:       9.375rem;
+    margin-bottom: 1.4286rem;
+}
+
+.input-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.75rem;
+ }
+
+/*-----------------------------------------------------------------------*/
+
+/*------------------------------Searh bar--------------------------------*/
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #5A5A5A;
+    border-right: none;
+    padding: 1rem 1rem 1rem 1.5rem;
+    height: 3rem;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+
+  .searchTerm:focus{
+    color: #5A5A5A;
+  }
+
+  .searchButton {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #5A5A5A;
+    background: #5A5A5A;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1.25rem
+  }
+
+
+  .wrap{
+    width: 30%;
+  }
+
+  .search-text {
+    font-size: 1.875rem;
+    font-weight: 500;
+    color: #211138;
+    opacity: .25;
+  }
+/*-----------------------------------------------------------------------*/
 
 
 @media (max-width: 991px){
@@ -208,22 +343,33 @@
 
             span, p { font-size: .768rem; }
 
+     .icon {
+                font-size: 1rem;
+            }
 
             .buttons {
                 margin-left: 0;
             }
 
             .primary-btn {
-                height: 3rem;
-                width: 3rem;
+                height: 4rem;
+                width: 4rem;
                 font-size: 1.5rem;
             }
 
             .secondary-btn {
-                height: 2rem;
-                width: 2rem;
+                height: 3rem;
+                width: 3rem;
             }
 
+
+            .home-content {
+                max-width: 40rem;
+            }
+
+            .input-box { display: block; }
+
+            .input-field { width: 100%;}
 
        }
 

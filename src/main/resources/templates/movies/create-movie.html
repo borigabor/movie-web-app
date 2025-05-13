@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome to Movie Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+
+<header class="header layout__item--full-width gutter--horizontal-big">
+    <div class="header-wrapper layout__item--70-percent layout__item--centered-horizontally">
+        <h3 class="header-title">MovieFlix</h3>
+    </div>
+</header>
+
+<div class="movie-container layout__item--70-percent layout__item--centered-horizontally">
+    <div class="container gutter--horizontal-big gutter--horizontal-big ">
+        <h2>Create New Movie</h2>
+        <div class="btn-box">
+            <a href="/" class="primary-btn btn"><i class="fa-solid fa-house"></i></a>
+            <p>Back to home</p>
+        </div>
+    </div> <!--container end-->
+
+    <form th:action="@{/movies}" th:object="${movie}" method="post" class="input-fields layout__item--70-percent  layout__item--centered-horizontally gutter--horizontal-small"> <!--form-->
+        <div class="input-box">
+            <label for="cover">Movie Poster URL</label>
+            <input th:field="*{coverUrl}" required type="text" id="cover" name="cover" placeholder="Movie Poster URL" class="input-field" >
+        </div>
+        <div class="input-box">
+            <label for="title">Title</label>
+            <input th:field="*{title}" required type="text" id="title" name="title" placeholder="Title" class="input-field" >
+        </div>
+
+        <div class="input-box">
+            <label for="releaseDate">Release Date</label>
+            <input th:field="*{releaseDate}" required type="date" id="releaseDate" name="releaseDate" class="input-field" >
+        </div>
+        <div class="input-box">
+            <label for="lang">Language</label>
+            <select th:field="*{lang}" name="lang" id="lang" class="input-field" >
+                <option value="English">English</option>
+                <option value="Magyar">Magyar</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="Deutsch">Deutsch</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label for="duration">Duration in minutes</label>
+            <input th:field="*{duration}" required type="number" min="5" max="500" id="duration" name="duration" class="input-field">
+        </div>
+        <div class="input-box">
+            <label for="duration">Director</label>
+            <select th:field="*{director.id}" required id="director" name="director" class="input-field">
+                <option  th:each="director : ${directors}" th:value="${director.id}" th:text="${director.name}">Director Name</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label for="genre">Genre</label>
+            <input type="text" th:field="*{genre}" id="genre" name="genre" class="input-field" >
+        </div>
+
+        <div class="input-box">
+            <label for="plot">Plot</label>
+            <textarea th:field="*{plot}" required id="plot" name="plot" placeholder="Enter movie Plot..." class="input-field input-field--textarea"></textarea>
+        </div>
+
+        <div class="btn-container">
+            <div class="btn-box">
+                <button type="submit" class="primary-btn btn"><i class="fa-solid fa-check"></i></button>
+                <p>Add Movie </p>
+            </div>
+            <div class="btn-box">
+                <a href="/movies/list" class="primary-btn btn"><i class="fa-solid fa-x"></i></a>
+                <p>Cancel</p>
+            </div>
+        </div>
+
+    </form><!--end form-->
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>add director</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+
+<header class="header layout__item--full-width gutter--horizontal-big">
+  <div class="header-wrapper layout__item--70-percent layout__item--centered-horizontally">
+    <h3 class="header-title">MovieFlix</h3>
+  </div>
+</header>
+
+<div class="movie-container layout__item--70-percent layout__item--centered-horizontally">
+  <div class="container gutter--horizontal-big gutter--horizontal-big ">
+    <h2>Create New Director</h2>
+    <div class="btn-box">
+      <a href="/" class="primary-btn btn"><i class="fa-solid fa-house"></i></a>
+      <p>Back to home</p>
+    </div>
+  </div> <!--container end-->
+
+  <form th:action="@{/directors}" th:object="${director}" method="post" class="input-fields layout__item--70-percent  layout__item--centered-horizontally gutter--horizontal-small"> <!--form-->
+    <div class="input-box">
+      <label for="avatar">Director Avatar</label>
+      <input th:field="*{avatar}" required type="text" id="avatar" name="avatar" placeholder="Director Avatar URL" class="input-field" >
+    </div>
+
+    <div class="input-box">
+      <label for="name">Name</label>
+      <input th:field="*{name}" required type="text" id="name" name="name" placeholder="Name" class="input-field" >
+    </div>
+
+    <div class="input-box">
+      <label for="nationality">Nationality</label>
+      <input th:field="*{nationality}" required type="text" id="nationality" name="nationality" placeholder="nationality" class="input-field" >
+    </div>
+
+    <div class="input-box">
+      <label for="dateOfBirth">Date Of Birth</label>
+      <input th:field="*{dateOfBirth}" required type="date" id="dateOfBirth" name="dateOfBirth" class="input-field" >
+    </div>
+
+
+    <div class="btn-container">
+      <div class="btn-box">
+        <button type="submit" class="primary-btn btn"><i class="fa-solid fa-check"></i></button>
+        <p>Add Movie </p>
+      </div>
+      <div class="btn-box">
+        <a href="/directors/list" class="primary-btn btn"><i class="fa-solid fa-x"></i></a>
+        <p>Cancel</p>
+      </div>
+    </div>
+
+  </form><!--end form-->
+
+</div>
+
+</body>
+</html>
