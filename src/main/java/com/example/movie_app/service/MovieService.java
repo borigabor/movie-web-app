@@ -1,9 +1,10 @@
+
 package com.example.movie_app.service;
 
-import com.example.movie_app.domain.Director;
 import com.example.movie_app.domain.Movie;
 import com.example.movie_app.exception.NoSuchEntityException;
 import com.example.movie_app.repository.MovieRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,11 +14,8 @@ import java.util.UUID;
 @Service
 public class MovieService {
 
-    private final MovieRepository movieRepository;
-
-    public MovieService(MovieRepository movieRepository) {
-        this.movieRepository = movieRepository;
-    }
+    @Autowired
+    private MovieRepository movieRepository;
 
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
@@ -29,24 +27,25 @@ public class MovieService {
     }
 
     public Movie save(Movie movie) {
-       return movieRepository.save(movie);
+        return movieRepository.save(movie);
     }
 
     public Movie edit(Movie movie) {
-       return movieRepository.save(movie);
+        return movieRepository.save(movie);
     }
 
     public Movie findById(UUID id) {
         Optional<Movie> optionalMovie = movieRepository.findById(id);
-        if(optionalMovie.isPresent()) {
+        if (optionalMovie.isPresent()) {
             return optionalMovie.get();
         } else {
-            throw new NoSuchEntityException("There was no Movie with id: " + id);
+            throw new NoSuchEntityException(
+                    "There was no Movie with id: " + id
+            );
         }
     }
 
     public void deleteById(UUID id) {
         movieRepository.deleteById(id);
     }
-
 }
