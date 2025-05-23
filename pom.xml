@@ -132,6 +132,7 @@
 					<excludes>
 						<exclude>**/exception/*</exclude>
 						<exclude>**/DemoApplication.class</exclude>
+						<exclude>**/controller/*</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
